@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpFinder2.BLL", "IpFinder2.BLL\IpFinder2.BLL.csproj", "{C7ABFE07-A322-48CE-95B2-FA693D00ADA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpFinder2.DAL", "IpFinder2.DAL\IpFinder2.DAL.csproj", "{CB6553CB-FFBD-424A-8669-AFDC56A4754F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IpFinder2.Presentation", "IpFinder2.Presentation\IpFinder2.Presentation.csproj", "{12C80B7F-35DE-4010-9A6E-08D12F9D449D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7ABFE07-A322-48CE-95B2-FA693D00ADA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7ABFE07-A322-48CE-95B2-FA693D00ADA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7ABFE07-A322-48CE-95B2-FA693D00ADA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7ABFE07-A322-48CE-95B2-FA693D00ADA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB6553CB-FFBD-424A-8669-AFDC56A4754F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB6553CB-FFBD-424A-8669-AFDC56A4754F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB6553CB-FFBD-424A-8669-AFDC56A4754F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB6553CB-FFBD-424A-8669-AFDC56A4754F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C80B7F-35DE-4010-9A6E-08D12F9D449D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C80B7F-35DE-4010-9A6E-08D12F9D449D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C80B7F-35DE-4010-9A6E-08D12F9D449D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C80B7F-35DE-4010-9A6E-08D12F9D449D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
