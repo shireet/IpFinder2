@@ -1,15 +1,26 @@
+using System.IO.Compression;
 using IpFinder2.DAL.Common;
 using IpFinder2.DAL.Interfaces;
 using IpFinder2.DAL.Models;
 
 namespace IpFinder2.DAL.Implementations;
 
-public class SubnetRepository(string filePath) : ISubnetRepository
+public class SubnetRepository(string zipPath, string csvFileName) : ISubnetRepository
 {
     public IEnumerable<SubnetInfoEntity> LoadSubnets()
     {
-        foreach (var line in File.ReadLines(filePath))
+        using var archive = ZipFile.OpenRead(zipPath);
+        var entry = archive.GetEntry(csvFileName);
+
+        if (entry == null)
+            throw new FileNotFoundException($"CSV file '{csvFileName}' not found inside archive '{zipPath}'.");
+
+        using var stream = entry.Open();
+        using var reader = new StreamReader(stream);
+
+        while (!reader.EndOfStream)
         {
+            var line = reader.ReadLine();
             if (string.IsNullOrWhiteSpace(line)) continue;
 
             var parts = line.Split(',');

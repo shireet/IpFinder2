@@ -18,9 +18,9 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
             <Link>appsettings.json</Link>
         </Content>
-        <Content Include="..\geo-US.csv">
+        <Content Include="..\geo-US.csv.zip">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-            <Link>geo-US.csv</Link>
+            <Link>geo-US.csv.zip</Link>
         </Content>
     </ItemGroup>
 

@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using IpFinder2.BLL.Interfaces;
 using IpFinder2.BLL.Mappers;
 using IpFinder2.BLL.Models;
@@ -8,15 +9,15 @@ namespace IpFinder2.BLL.Implementations;
 
 public class IpSearcher(ISubnetRepository repo) : IIpSearcher
 {
-    private readonly List<SubnetInfo> _subnets = repo.LoadSubnets()
+    private readonly ImmutableArray<SubnetInfo> _subnets = repo.LoadSubnets()
         .Select(x => x.ToBll())
         .OrderBy(s => s.Start)
-        .ToList();
+        .ToImmutableArray();
     
     public SubnetInfo? Find(string ip)
     {
-        var ipNum = IpUtils.IpToBigInteger(ip);
-        int left = 0, right = _subnets.Count - 1;
+        if (!IpUtils.TryIpToBigInteger(ip, out var ipNum)) return null;
+        int left = 0, right = _subnets.Length - 1;
 
         while (left <= right)
         {

@@ -33,10 +33,12 @@ public static class IpUtils
         return true;
     }
     
-    public static BigInteger IpToBigInteger(string ipStr)
+    public static bool TryIpToBigInteger(string ipStr, out BigInteger ipNum)
     {
-        var ip = IPAddress.Parse(ipStr);
+        ipNum = BigInteger.Zero;
+        if (!IPAddress.TryParse(ipStr, out var ip)) return false;
         var bytes = ip.GetAddressBytes();
-        return new BigInteger(bytes.Reverse().Concat(new byte[] { 0 }).ToArray());
+        ipNum = new BigInteger(bytes.Reverse().Concat(new byte[] { 0 }).ToArray());
+        return true;
     }
 }

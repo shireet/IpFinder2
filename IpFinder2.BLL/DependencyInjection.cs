@@ -8,7 +8,7 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddBllLayer(this IServiceCollection services)
     {
-        services.AddScoped<IIpSearcher, IpSearcher>();
+        services.AddSingleton<IIpSearcher, IpSearcher>();
         return services;
     }
 }
